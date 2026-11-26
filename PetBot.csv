@@ -1,0 +1,85 @@
+Movement,,,,,,
+Image,Item,Quantity,Price Per Part,Total Price,Link,Why I picked it
+,TT Geared Motor,2,25,50,TT Geared Motor For Smart Car Robot 3-6Vdc | Flux Electronix,"I chose a DC gear motor over a stepper because it's cheaper and more suitable because we don't need precise positioning. The yellow TT motor was the cheapest viable option, and I used two instead of four to reduce costs, since the robot's lightweight design doesn't need any more torque."
+," 65mm Smart Car Robot Tire Wheel
+",2,25,50,65mm Smart Car Robot Tire Wheel | Flux Electronix,It's simpler and cheaper than 3d printing a custom wheel and it fits perfectly on the motor I chose
+,Metal Caster Wheel 30mm,1,35,35,https://store.fut-electronics.com/products/metal-caster-wheel-for-robot-1?_pos=2&_sid=bf10dcad0&_ss=r,"Although we could balance the robot could on two wheels, adding a caster wheel expands the support polygon, helping keep the CoM inside it thus preventing tipping."
+,"L298N Motor Driver Module
+",1,75,75,L298N Motor Driver Module | Flux Electronix,It's just a driver for the tt dc motors
+,"HC-SR04 Ultrasonic Sensor Module
+",2,40,80,HC-SR04 Ultrasonic Sensor Module | Flux Electronix,wall detection (for anti crash system)
+,"IR Infrared Obstacle Avoidance Tracking Sensor Module
+",2,30,60,IR Infrared Obstacle Avoidance Tracking Sensor Module | F...,Edge detection to prevent falling
+,,,,Total,,
+,,,,350,,
+,,,,,,
+peripherals & Ai system,,,,,,
+Image,Item,Quantity,Price Per Part,Total Price,Link,Why I picked it
+,ESP32-S3-DevKitC-1 N16R8,1,520,520,https://store.fut-electronics.com/products/esp32-s3-devkitc-1-copy?_pos=4&_sid=670c7245a&_ss=r,"At first I wanted to use the pi pico 2w for this project but this esp is cheaper, has better wifi, has more pins, has better resources (which means easier vibecoding), has more psram and uses usbc"
+,"INMP441 MEMS Microphone - I2S
+",1,220,220,https://store.fut-electronics.com/products/inmp441-mems-microphone-i2s?_pos=5&_sid=cbaa97927&_ss=r,It's the cheapest viable option for a microphone. I contemplated replacing it with a cheaper condenser microphone but claude said it's much better for speech recognition and that the price difference is worth it
+,"Speaker - 3W 4 Ohm
+",1,80,80,https://store.fut-electronics.com/products/speaker-3w-4-ohm?_pos=1&_sid=cbaa97927&_ss=r,It's the cheapest speaker with an eclosure that isn't too quiet. well worth the price
+,"PAM8403
+Stereo Audio
+Amplifier
+Module 2x3W",1,35,35,https://fluxelectronix.com/shop/pam8403-stereo-audio-amplifier-module-2x3w/,"I added this because the ESP32-S3
+can't natively drive a speaker
+because it doesn't have a dac
+pin. Therefore an amplifier
+module needs to be used with a
+PWM pin and an RC filter. I
+picked this version over the plain
+PAM8403 for the same price
+because it has a volume knob
+with an on/off switch and a
+470uF filter capacitor already on
+the board."
+,,,,Total,,
+,,,,855,,
+,,,,,,
+Power Regulation.,,,,,,
+Image,Item,Quantity,Price Per Part,Total Price,Link,Why I picked it
+,"Battery 3.7V 18650 Lithium Rechargeable
+(Capacity is 2000 MAH)",2,95,190,Battery 3.7V 18650 Lithium Rechargeable | RAM Electronics,ِI think these would be the most suitable batteries for powering the robot. I'm still gonna ask Assem to tell me if this battery is any good since most batteries on the market are trash. Update ( Assem told me to check the size against the battery cell holder)
+,18650 single-cell battery holder with wires,2,8,16,https://www.ram-e-shop.com/shop/battery-holder-18650x1-battery-holder-1x18650-7380,Two single holders let me wire the cells in series and attach the BMS balance wire (BM) at the junction between them. 
+,"BMS 2S 8A, 7.4v Li-Ion Battery Protection Board",1,40,40,"BMS 2S 8A, 7.4v Li-Ion Battery Protection Board | Flux El...",it protects the batteries when charging and discharging (super important) and it balances the charge of the 2 batteries 
+,"2S 2A 18650 Lithium Battery Charger module Type-C
+",1,55,55,2S 2A 18650 Lithium Battery Charger module Type-C,"Charges the 2S pack from a normal 5V USB-C charger, so it's cheaper than a DC-plug charger. It charges up to 8.4V. We need measure the output with a multimeter though before connecting the cells and try charging the cells only before connecting the rest of the components because it could screw everything up . (output should be about 8.4V and NOT A BIT HIGHER) "
+,DC-DC Step Down Voltage Converter 2A USB With Voltmeter (4.5V~40Vdc to Fixed Output 5V/2A) ,1,0,0,https://www.ram-e-shop.com/shop/dc-dc-302-dc-dc-step-down-voltage-converter-2a-usb-with-voltmeter-4-5v-40vdc-to-fixed-output-5v-2a-sku-dc302-7282,"Steps the 7.4V battery down to 5V for the ESP32-S3 (through a Schottky diode into its 5V pin), the PAM8403 amplifier, the L298N logic and the sensors. It's also good because it's free since I already own it."
+,"Round Rocker Switch ON-OFF Black (6A,250VAC)
+",1,7,7,"Round Rocker Switch ON-OFF Black (6A,250VAC) | Flux Electronix",an on/off switch for the robot
+,,,,Total,,
+,,,,308,,
+,,,,,,
+"Miscellaneous (resistors, capacitors, diodes, headers, breadboard, wires and cables that connect the parts above)",,,,,,
+Image,Item,Quantity,Price Per Part,Total Price,Link,Why I picked it
+,"Resistors 1/4W (1k x4, 2k x3, 10k x5, 47k x2, 100k x2)",16,1,16,,
+,Ceramic capacitor 100nF 50V (PF104),8,0.5,4,Ceramic Capacitor 100nF – 50v (PF104) | Flux Electronix,
+,Ceramic capacitor 10nF 50V (PF103),1,0.5,0.5,Ceramic Capacitor 10nF – 50v (PF103) | Flux Electronix,
+,Ceramic capacitor 4.7nF 50V (PF472),1,0.5,0.5,Ceramic Capacitor 4.7nF – 50v (PF472) | Flux Electronix,
+,Ceramic capacitor 1nF 50V (PF102),1,0.5,0.5,Ceramic Capacitor 1nF – 50v (PF102) | Flux Electronix,
+,Ceramic capacitor 470pF 50V (PF471),1,0.5,0.5,Ceramic Capacitor 470nF – 100V (PF474) | Flux Electronix,
+,Ceramic capacitor 470nF 100V (PF474),1,0.6,0.6,,
+,Ceramic capacitor 22nF 50V (PF223),1,0.5,0.5,Ceramic Capacitor 22nF – 50v (PF223) | Flux Electronix,
+,Ceramic capacitor 2.2nF 50V (PF222),1,0.5,0.5,Ceramic Capacitor 2.2nF – 50v (PF222) | Flux Electronix,
+,Electrolytic capacitor 470uF 16V,3,3,9,,
+,Electrolytic capacitor 100uF 16V,2,2,4,,
+,1N5819 Schottky diode,2,3,6,,
+,Female pin header 1x40 (breakable),2,5,10,,
+,Male pin header strip 40-pin (breakable),2,3,6,,
+,Momentary push button (talk button),2,2,4,,
+,"Dupont jumper wires 40 pcs (male-female, male-male, female-female)",3,35,105,,
+,Breadboard 830 points,1,90,90,,
+,Perfboard 7x9 cm,2,25,50,,
+,140Pcs Breadboard Solid Jumper Wires Set with Plastic Box,1,60,60,https://fluxelectronix.com/shop/140pcs-breadboard-solid-jumper-wires-set-with-plastic-box/,
+,"2-pin screw terminal block, 5.08mm pitch (PCB mount)",6,5,30,,
+,"Cable ties (small, pack of 100)",1,20,20,,
+,USB-A plug to screw terminal breakout,1,25,25,,
+,Heat shrink tubing assortment,1,30,30,,
+,3A slow-blow fuse + holder,1,12,12,,
+,,,,Total,,
+,,,,484.6,,
+,,,,,,
+,,,,Total,in USD,
+,,,,1997.6,39.952,
