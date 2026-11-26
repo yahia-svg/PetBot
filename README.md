@@ -94,8 +94,6 @@ Resistors, capacitors, diodes, headers, breadboard, and the wires and cables tha
 | Miscellaneous | 484.6 EGP / $9.69 |
 | **Total** | **1997.6 EGP / $39.95** |
 
-**In HC hours:** 15 Hours
-
 ## Pin Map
 
 | Signal | ESP32-S3 GPIO | DevKitC-1 header pin | Connects to | Notes |
